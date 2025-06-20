@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CleanConnect MVP
 
-## Getting Started
+Plataforma para profissionais brasileiras de limpeza nos Estados Unidos.
 
-First, run the development server:
+## 🚀 Quick Start
 
+1. Configure as variáveis de ambiente
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Edite .env.local com suas credenciais do Supabase, OpenAI, etc
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Instale as dependências adicionais
+```bash
+npm install @supabase/ssr @hookform/resolvers react-hook-form zod
+npm install @radix-ui/react-dialog @radix-ui/react-label @radix-ui/react-slot
+npm install class-variance-authority clsx tailwind-merge
+npm install date-fns react-day-picker
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Configure o Supabase
+- Crie um projeto em [supabase.com](https://supabase.com)
+- Execute o schema SQL em `supabase/migrations/001_initial_schema.sql`
+- Copie as chaves para `.env.local`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Inicie o desenvolvimento
+```bash
+npm run dev
+```
 
-## Learn More
+## 📱 Features MVP
 
-To learn more about Next.js, take a look at the following resources:
+- ✅ Agenda inteligente com drag-and-drop
+- ✅ IA para tradução e templates de mensagens
+- ✅ Perfil público profissional
+- ✅ Sistema de reviews
+- ✅ PWA mobile-first
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Frontend**: Next.js 14, TypeScript, Tailwind CSS
+- **Backend**: Supabase (PostgreSQL + Auth)
+- **AI**: OpenAI GPT-4
+- **SMS**: Twilio
+- **Payments**: Stripe
 
-## Deploy on Vercel
+## 📊 Estrutura do Banco
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Ver arquivo `supabase/migrations/001_initial_schema.sql`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎯 Próximos Passos
+
+1. [ ] Implementar autenticação
+2. [ ] Criar componentes base
+3. [ ] Desenvolver dashboard
+4. [ ] Integrar OpenAI
+5. [ ] Configurar PWA
