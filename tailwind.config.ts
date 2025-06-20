@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import { theme } from './src/lib/theme'
 
 const config: Config = {
   content: [
@@ -6,27 +7,27 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
-      colors: {
-        primary: {
-          DEFAULT: '#0066CC',
-          dark: '#0052A3',
-          light: '#3385D6',
-        },
-        success: {
-          DEFAULT: '#00AA44',
-          light: '#00CC52',
-        },
-        warning: {
-          DEFAULT: '#FFB700',
-        },
+      colors: theme.colors,
+      spacing: theme.spacing,
+      fontFamily: theme.typography.fontFamily,
+      fontSize: theme.typography.fontSize,
+      fontWeight: theme.typography.fontWeight,
+      lineHeight: theme.typography.lineHeight,
+      borderRadius: theme.borderRadius,
+      boxShadow: theme.shadows,
+      transitionProperty: {
+        DEFAULT: theme.transitions.DEFAULT,
+        fast: theme.transitions.fast,
+        slow: theme.transitions.slow,
       },
-      fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-      },
+      zIndex: theme.zIndex,
+      screens: theme.breakpoints,
     },
   },
   plugins: [],
 }
+
 export default config

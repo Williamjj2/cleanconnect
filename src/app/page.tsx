@@ -12,13 +12,13 @@ export default function Home() {
         </p>
         <div className="space-y-4">
           <Link
-            href="/auth/login"
+            href="/login"
             className="block bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition"
           >
             Entrar
           </Link>
           <Link
-            href="/auth/onboarding"
+            href="/onboarding"
             className="block bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition"
           >
             Começar Grátis

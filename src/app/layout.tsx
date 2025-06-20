@@ -1,7 +1,8 @@
-import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Metadata, Viewport } from 'next'
 import './globals.css'
 import { Providers } from './providers'
+import { ClientLayout } from '@/components/client-layout'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -9,8 +10,13 @@ export const metadata: Metadata = {
   title: 'CleanConnect - Seu negócio de limpeza nos EUA, sem barreiras',
   description: 'Plataforma completa para profissionais brasileiras de limpeza nos Estados Unidos',
   manifest: '/manifest.json',
-  themeColor: '#0066CC',
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+}
+
+export const viewport: Viewport = {
+  themeColor: '#ffffff',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 }
 
 export default function RootLayout({
@@ -21,7 +27,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <ClientLayout>{children}</ClientLayout>
+        </Providers>
       </body>
     </html>
   )
